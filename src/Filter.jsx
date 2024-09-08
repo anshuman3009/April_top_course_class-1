@@ -5,9 +5,7 @@ function Filter(props)
     let setcategory=props.setcategory;
     function helper(title)
     {
-        console.log("HELLO");
         setcategory(title);
-        console.log(category);
     }
     return(
        <>

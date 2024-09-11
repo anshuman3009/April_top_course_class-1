@@ -19,13 +19,28 @@ function Cards(props)
             })
             return newarray;
         }
-        else
+        else if(category === "Liked")
         {
+            // if (!courses) 
+            //     return [];
+            let likedCoursesArray = [];
+            Object.values(courses).forEach((array) => {
+              array.forEach((courseData) => {
+                if (likedcourse.includes(courseData.id)) {
+                  likedCoursesArray.push(courseData);
+                }
+              });
+            });
+            return likedCoursesArray;
+          }
+
+      
+        else
             return courses[category];
-        }
+        
     }
     return (
-        <>
+        <div className="flex flex-wrap justify-center gap-4 mb-4">
         {
            helper().map((course)=>(
             <Card 
@@ -35,7 +50,7 @@ function Cards(props)
             ></Card>
            )) 
         }
-        </>
+        </div>
     )
 }
 
